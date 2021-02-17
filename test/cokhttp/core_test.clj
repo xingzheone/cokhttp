@@ -1,4 +1,4 @@
-(ns cok.core-test
+(ns cokhttp.core-test
   (:require [clojure.test :refer :all]
             [cok.core :refer :all]))
 
