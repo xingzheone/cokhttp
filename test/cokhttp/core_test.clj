@@ -1,6 +1,6 @@
 (ns cokhttp.core-test
   (:require [clojure.test :refer :all]
-            [cok.core :refer :all]))
+            [cokhttp.core :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

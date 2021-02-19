@@ -2,8 +2,6 @@
  (:require [clojure.string :as str])
  (:import [okhttp3 Call Callback OkHttpClient Headers MediaType Request Request$Builder FormBody
                    FormBody$Builder RequestBody Response ResponseBody OkHttpClient$Builder HttpUrl RequestBody$Companion MediaType$Companion]
-  ;[okhttp3.MediaType Companion]
-  ;[okhttp3.RequestBody Companion]
           (javax.net.ssl X509TrustManager TrustManager KeyManagerFactory KeyManager SSLContext)
           (java.security SecureRandom)
           (java.security.cert X509Certificate)
@@ -36,9 +34,12 @@
    resp-body)
   )
  )
-(defn get
+;WARNING: get already refers to: #'clojure.core/get in namespace: cokhttp.core, being replaced by: #'cokhttp.core/get
+;Parameter specified as non-null is null: method okhttp3.HttpUrl$Companion.parse, parameter $this$toHttpUrlOrNull
+;如果使用get则会报上面的错误..
+(defn hget
  ([url params]
-  (get (url-params url params))
+  (hget (url-params url params))
   )
  ([url]
   (let [url       (if (string? url) (url-params url nil) url)
